@@ -1,0 +1,323 @@
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --cor-primaria: #6a1b9a;
+    /* Roxo vibrante */
+    --cor-primaria-dark: #4a148c;
+    --cor-fundo: #0b0b0b;
+    /* Preto quase puro */
+    --cor-fundo-card: #1a1a1a;
+    /* Cinza muito escuro */
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #b3b3b3;
+    --transicao: all 0.3s ease;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--cor-primaria);
+    box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--cor-primaria);
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial Black', sans-serif;
+    /* Ou a fonte que você escolheu */
+    color: #fff;
+    /* Cor do texto (branco no centro para brilhar mais) */
+    text-decoration: none;
+
+    /* O segredo do Neon: várias camadas de sombra */
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #a020f0,
+        /* Roxo */
+        0 0 40px #a020f0,
+        0 0 80px #a020f0,
+        0 0 90px #a020f0;
+
+    transition: 0.3s;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin-left: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.menu a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Seção Destaque */
+.destaque {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0b0b0b 0%, #2a0845 100%);
+}
+
+.destaque-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.destaque-texto h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.filtros {
+    margin-top: 30px;
+}
+
+.filtro {
+    background: transparent;
+    border: 1px solid var(--cor-primaria);
+    color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.filtro:hover {
+    background: var(--cor-primaria);
+    box-shadow: 0 0 15px var(--cor-primaria);
+}
+
+.destaque-imagem img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: var(--transicao);
+    width: 100%;
+    max-width: 500px;
+}
+
+.destaque-imagem img:hover {
+    transform: scale(1.03);
+}
+
+/* Catálogo de Séries */
+.secao {
+    padding: 60px 0;
+}
+
+.secao-cinza {
+    background-color: #121212;
+}
+
+.grid-series {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    animation-direction: reverse;
+    animation: slide-series 5s linear infinite;
+}
+
+.grid-series:hover {
+    animation-play-state: paused;
+}
+
+.carrossel {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    /* Adiciona um gradiente suave nas bordas para as séries não "brotarem" do nada */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.grid-series {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    /* Importante para manter tudo em uma linha */
+    animation: slide-series 40s linear infinite;
+    /* 40s para um movimento suave */
+}
+
+.grid-series:hover {
+    animation-play-state: paused;
+    /* Pausa ao passar o mouse */
+}
+
+@keyframes slide-series {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move até a metade (onde começa a cópia dos cards) */
+        transform: translateX(-50%);
+    }
+}
+
+/* Card da Série com Animação */
+.card-serie {
+    background-color: var(--cor-fundo-card);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transicao);
+    border: 1px solid #333;
+    position: relative;
+
+    /* REMOVIDO: width: 100% */
+    /* ADICIONADO: largura mínima para o card não sumir e máxima para não esticar demais */
+    width: min-content;
+    min-width: 280px;
+
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease backwards;
+}
+
+.card-serie:hover {
+    transform: translateY(-10px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 10px 25px rgba(106, 27, 154, 0.4);
+}
+
+.card-serie img {
+    height: 340px;
+    width: auto;
+
+}
+
+.card-serie h3 {
+    padding: 15px 15px 5px;
+    color: var(--cor-primaria);
+}
+
+.card-serie .genero {
+    padding: 0 15px;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+.card-serie .descricao {
+    padding: 15px;
+    font-size: 0.95rem;
+}
+
+/* Seções Sobre e Contato */
+.lista-contato {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.lista-contato li {
+    margin-bottom: 10px;
+}
+
+.lista-contato strong {
+    color: var(--cor-primaria);
+}
+
+/* Rodapé */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #333;
+}
+
+/* Animação de entrada (opcional) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-serie {
+    animation: fadeIn 0.8s ease backwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .destaque-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        display: none;
+        /* Em um projeto real, aqui entraria um menu hamburguer */
+    }
+}
+
+/* Estilo de cada pipoca da chuva */
+.popcorn-rain {
+    position: fixed;
+    top: -50px;
+    /* Começa fora da tela, no topo */
+    z-index: 10000;
+    font-size: 2rem;
+    pointer-events: none;
+    user-select: none;
+    animation: fallRain 3s linear forwards;
+}
+
+@keyframes fallRain {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        /* Cai até passar o final da tela e gira */
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+    }
+}

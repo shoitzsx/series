@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Séries</title>
+
+    <!-- TODO: garantir que a pasta css/ existe e o arquivo style.css também -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1 class="logo">𝙲𝚒𝚗𝚎𝙲𝚢𝚋𝚎𝚛</h1>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#series">Séries</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção destaque -->
+    <section id="inicio" class="secao destaque">
+        <div class="container destaque-conteudo">
+            <div class="destaque-texto">
+                <h2>Descubra novas séries para maratonar</h2>
+                <p>
+                    Chegou a hora de transformar a sua sala em um cinema particular! 
+                    Mergulhe sem medo nessa vitrine de histórias incríveis, 
+                    perca-se nas opções e prepare-se para uma jornada que vai te tirar do sofá!
+                </p>
+
+                <!-- Filtros visuais de gêneros (não precisam funcionar) -->
+                <div class="filtros">
+                    <!-- TODO: trocar ou adicionar gêneros -->
+                    <button class="filtro">Todos</button>
+                    <button class="filtro">Ação</button>
+                    <button class="filtro">Ficção</button>
+                    <button class="filtro">Drama</button>
+                    <button class="filtro">Terror</button>
+                    <button class="filtro">Comédia</button>
+                </div>
+            </div>
+
+            <div class="destaque-imagem">
+                <!-- TODO: trocar por uma imagem relacionada a séries -->
+                <img src="Capa.png" alt="Capa">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção catálogo de séries -->
+    <section id="series" class="secao secao-cinza">
+        <div class="container">
+            <h2>Séries em destaque</h2>
+            <div class="carrossel">
+                <div class="grid-series">
+                    <!-- Card 1 -->
+                    <div class="card-serie">
+                        <!-- TODO: trocar os dados da série -->
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.uAslquyu92FnGL3MIy6aewHaLJ?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Nome da série">
+                        <h3>Moon Knight</h3>
+                        <p class="genero">Gênero: Ação-aventura - Fantasia - Terror psicológico - Super-heróis</p>
+                        <p class="descricao">
+                            <!-- Pequena descrição da série -->
+                            Steven Grant tem transtorno dissociativo de identidade e compartilha seu corpo com o
+                            mercenário Marc Spector.
+                            Juntos, eles investigam mistérios dos deuses do Egito.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card-serie">
+                        <img src="data:image/webp;base64,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"
+                            alt="Nome da série">
+                        <h3>The Las of Us</h3>
+                        <p class="genero">Gênero: Pós-apocalíptico - Drama - Thriller</p>
+                        <p class="descricao">
+                            Joel, um sobrevivente duro e cínico, e a jovem e impetuosa Ellie se conectam pela
+                            dificuldade do
+                            mundo em que vivem. Juntos, eles enfrentam circunstâncias brutais e monstros impiedosos
+                            durante uma difícil
+                            jornada pelos EUA após um surto apocalíptico.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card-serie">
+                        <img src="https://m.media-amazon.com/images/M/MV5BOTFmZmExYTEtYmE0Mi00MzRmLWE4ZDYtOThiNzNlOTIyODljXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            alt="Vikings">
+                        <h3>Vikings</h3>
+                        <p class="genero">Gênero: Drama historico - Ficção cientifica</p>
+                        <p class="descricao">
+                            A série acompanha a saga dos navegadores nórdicos que exploram e conquistam novos
+                            territórios nos tempos medievais.
+                        </p>
+                    </div>
+
+
+                    <div class="card-serie">
+                        <img src="https://www.seriesdatv.pt/wp-content/uploads/2022/02/peaky-blinders-netflix.jpg.webp"
+                            alt="Peaky Blinders">
+                        <h3>Peaky Blinders</h3>
+                        <p class="genero">Gênero: Crime - Drama - Ficção policial - Mistério - Suspense - Policial
+                            processual -
+                            História de detetives</p>
+                        <p class="descricao">
+                            Uma notória gangue da Inglaterra de 1919 ascende no submundo liderada pelo cruel Tommy
+                            Shelby,
+                            um criminoso disposto a subir na vida a qualquer preço.
+                        </p>
+                    </div>
+
+
+                    <div class="card-serie">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkfJfrNo4tIzmqoW6ICSiJEk_ryI-8QeDorw&s"
+                            alt="Dexter">
+                        <h3>Dexter</h3>
+                        <p class="genero">Gênero: Drama Policial - Suspense - Elementos de Mistério - Thriller
+                            Psicológico</p>
+                        <p class="descricao">
+                            Dexter é um especialista forense que passa o dia solucionando crimes e a noite cometendo
+                            assassinatos.
+                            Inteligente e bonito, o assassino em série vive em conflito com seu instinto de matador e o
+                            desejo pela felicidade.
+                        </p>
+                    </div>
+
+
+                    <div class="card-serie">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjIyMGNlNWEtYzc1NS00NzNkLWE1NTUtOTc2MTY3NWNhOTVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            alt="Fallout">
+                        <h3>Fallout</h3>
+                        <p class="genero">Gênero: Ação - Ficção pós-apocalíptica - Guerra - Ficção científica - Humor
+                            ácido -
+                            Aventura - Drama - Western de ficção científica</p>
+                        <p class="descricao">
+                            Duzentos anos após o apocalipse, os habitantes dos luxuosos abrigos radioativos são forçados
+                            a retornar
+                            ao universo complexo, estranho e altamente violento que os espera na superfície.
+                        </p>
+                    </div>
+
+
+                    <div class="card-serie">
+                        <img src="https://cinema10.com.br/upload/featuredImage.php?url=https%3A%2F%2Fcinema10.com.br%2Fupload%2Fseries%2Fseries_1167_MV5BMGMwMDgxODgtYzJiMC00MWRhLTliODktOTc1NzZiNmM5NGNjXkEyXkFqcGdeQXVyODc0OTEyNDU%40._V1_SY1000_CR0%2C0%2C675%2C1000_AL_.jpg"
+                            alt="The Rain">
+                        <h3>The Rain</h3>
+                        <p class="genero">Gênero: Terror - Suspense - Ficção pós-apocalíptica - Ficção científica -
+                            Drama - Catástrofe - Mistério - Suspense psicológico</p>
+                        <p class="descricao">
+                            Seis anos depois de um vírus dizimar quase toda a população da Escandinávia,
+                            dois irmãos se juntam a um grupo de sobreviventes em busca de segurança e respostas.
+                        </p>
+                    </div>
+
+
+                    <div class="card-serie">
+                        <img src="https://s2-quem.glbimg.com/Dc8aMiWKbj1h1NEYx8YS0NfEH0Y=/0x0:1000x1481/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/C/L/19C1aOSfWoWTRcUwFC8w/mv5bognkowvlotitodq1ns00ytzmltkwndutztexzgzkogq4ytzmxkeyxkfqcgdeqxvymteymjm2ndc2.-v1-fmjpg-ux1000-.jpg"
+                            alt="O Problema dos 3 Corpos">
+                        <h3>O Problema dos 3 Corpos</h3>
+                        <p class="genero">Gênero: Ficção científica - Drama - Suspense - Ação - Aventura - Mistério -
+                            Fantasia</p>
+                        <p class="descricao">
+                            Um grupo de cientistas faz descobertas revolucionárias ao longo das décadas.
+                            Ao mesmo tempo, as leis da ciência começam a cair por terra.
+                        </p>
+                    </div>
+
+                    <!-- TODO: opcional - pedir pra criarem mais 2 ou 3 cards -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="secao">
+        <div class="container">
+            <h2>Sobre o catálogo</h2>
+            <p>
+                O CineCyber é o seu hub definitivo de entretenimento. Criado por um entusiasta para entusiastas,
+                meu objetivo é centralizar as melhores séries em um ambiente intuitivo e de acesso livre.
+                Explore gêneros que vão do terror psicológico ao drama histórico e descubra sua próxima maratona aqui.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="secao secao-cinza">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Quer enviar sugestões de séries?</p>
+            <ul class="lista-contato">
+                <li><strong>Email:</strong>lucas.mateus.izaias.santos@gmail.com</li>
+                <li><strong>Instagram:</strong> _izaias.santos </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Lucas Izaias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        const logo = document.querySelector('.logo');
+
+        logo.addEventListener('dblclick', function () {
+            // Quantidade de pipocas na chuva
+            const popcornCount = 50;
+
+            for (let i = 0; i < popcornCount; i++) {
+                // Pequeno atraso para não caírem todas exatamente ao mesmo tempo
+                setTimeout(createPopcornRain, i * 50);
+            }
+        });
+        // Lógica para o Carrossel Infinito
+        const grid = document.querySelector('.grid-series');
+        const cards = grid.innerHTML;
+        // Duplicamos o conteúdo para que o loop não tenha espaços vazios
+        grid.innerHTML = cards + cards;
+        function createPopcornRain() {
+            const popcorn = document.createElement('div');
+            popcorn.classList.add('popcorn-rain');
+            popcorn.innerText = '🍿';
+
+            // Posição horizontal aleatória (de 0 a 100% da largura da tela)
+            const randomX = Math.random() * 100 + 'vw';
+
+            // Tamanho aleatório para dar profundidade
+            const randomSize = (Math.random() * 3.5 + 2.5) + 'rem';
+
+            // Velocidade aleatória para não parecer mecânico
+            const duration = (Math.random() * 2 + 2) + 's';
+
+            popcorn.style.left = randomX;
+            popcorn.style.fontSize = randomSize;
+            popcorn.style.animationDuration = duration;
+
+            document.body.appendChild(popcorn);
+
+            // Remove a pipoca após o fim da animação
+            setTimeout(() => {
+                popcorn.remove();
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>
